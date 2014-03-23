@@ -1,1 +1,39 @@
-body{padding-top:60px}.container h1{padding-bottom:.5em}.container section{padding-bottom:3em}footer{background-color:#f2f2f2;padding-bottom:15px;padding-top:15px}.media-social{padding-bottom:5px}.media-social .media-social-logo{width:35px;height:35px}.media-social .media-body{padding-top:5px}#aiken-portrait{padding-left:10px;padding-bottom:10px;float:right}@media(max-width:480px){#aiken-portrait{padding-top:0;padding-left:0;padding-bottom:10px;display:block;float:none;text-align:center}}
+body {
+  padding-top: 60px;
+}
+.container h1 {
+  padding-bottom: 0.5em;
+}
+.container section {
+  padding-bottom: 3em;
+}
+footer {
+  background-color: #f0f0f0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.media-social {
+  padding-bottom: 5px;
+}
+.media-social .media-social-logo {
+  width: 35px;
+  height: 35px;
+}
+.media-social .media-body {
+  padding-top: 5px;
+}
+#aiken-portrait {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  float: right;
+}
+@media (max-width: 480px) {
+  #aiken-portrait {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 10px;
+    display: block;
+    float: none;
+    text-align: center;
+  }
+}
