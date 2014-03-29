@@ -1,6 +1,3 @@
-body {
-  padding-top: 60px;
-}
 .container h1 {
   padding-bottom: 0.5em;
 }
@@ -9,8 +6,7 @@ body {
 }
 footer {
   background-color: #f0f0f0;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .media-social {
   padding-bottom: 5px;
@@ -21,6 +17,9 @@ footer {
 }
 .media-social .media-body {
   padding-top: 5px;
+}
+.media-badge {
+  padding-top: 15px;
 }
 #aiken-portrait {
   padding-left: 10px;
