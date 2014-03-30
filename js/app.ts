@@ -6,7 +6,9 @@ interface IHomepageRootScope extends ng.IScope {
 
 var homepageApp = angular.module('homepageApp', [
     'homepageControllers',
-    'ngRoute'
+    'ngRoute',
+    'angulartics',
+    'angulartics.google.analytics'
 ]);
 
 homepageApp.config(['$routeProvider',

@@ -2,7 +2,9 @@
 
 var homepageApp = angular.module('homepageApp', [
     'homepageControllers',
-    'ngRoute'
+    'ngRoute',
+    'angulartics',
+    'angulartics.google.analytics'
 ]);
 
 homepageApp.config([
