@@ -4,7 +4,7 @@ var Controllers;
 (function (Controllers) {
     var BlogCtrl = (function () {
         function BlogCtrl($scope, $http) {
-            $http.get('https://public-api.wordpress.com/rest/v1/sites/kaburdett.wordpress.com/posts?number=5&order_by=date').success(function (data) {
+            $http.jsonp('https://public-api.wordpress.com/rest/v1/sites/kaburdett.wordpress.com/posts?callback=JSON_CALLBACK&number=5&order_by=date').success(function (data) {
                 $scope.postCollection = data;
             });
         }

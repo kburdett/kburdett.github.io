@@ -10,12 +10,12 @@ module Controllers {
     export class BlogCtrl {
 
         constructor($scope:IBlogPostScope, $http:ng.IHttpService) {
-            $http.get('https://public-api.wordpress.com/rest/v1/sites/kaburdett.wordpress.com/posts?number=5&order_by=date').
-                success(function (data:any) {
+            $http.jsonp('https://public-api.wordpress.com/rest/v1/sites/kaburdett.wordpress.com/posts?callback=JSON_CALLBACK&number=5&order_by=date').
+                success(function (data) {
                     $scope.postCollection = data;
                 });
         }
-
+        
     }
 }
 

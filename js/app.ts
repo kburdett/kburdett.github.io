@@ -24,17 +24,6 @@ homepageApp.config(['$routeProvider',
         }]
 );
 
-// CORS config
-homepageApp.config(['$httpProvider',
-    function ($httpProvider) {
-        // ...
-
-        // delete header from client:
-        // http://stackoverflow.com/questions/17289195/angularjs-post-data-to-external-rest-api
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    }]);
-
 // set the page title on route change
 homepageApp.run(
     function ($rootScope:IHomepageRootScope) {
