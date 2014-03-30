@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="homepageApp">
+<html lang="en" id="ng-app" ng-app="homepageApp">
 <head>
     <meta charset="utf-8"/>
     <meta name="author" content="Kevin Burdett"/>
@@ -26,7 +26,12 @@
     <script src="js/dist/respond.min.js"></script>
     <![endif]-->
 
-    <title ng-bind="'KevinBurdett.com - ' + $root.pageTitle"></title>
+    <!-- Add JSON3 to make AngularJS happy in IE <= 7 -->
+    <!--[if lte IE 7]>
+    <script src="js/dist/json3.min.js"></script>
+    <![endif]-->
+
+    <title ng-bind="'KevinBurdett.com - ' + $root.pageTitle">KevinBurdett.com</title>
 </head>
 
 <body>
@@ -61,7 +66,9 @@
         <h1>Kevin's Homepage <small ng-bind="$root.pageTitle"></small></h1>
     </div>
 
-    <div ng-view></div>
+    <div ng-view>
+        This page requires JavaScript to show correctly!
+    </div>
 
 </div>
 
