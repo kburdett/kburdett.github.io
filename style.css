@@ -1,25 +1,28 @@
-.container h1 {
-  padding-bottom: 0.5em;
+.social-links {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
-.container section {
-  padding-bottom: 3em;
+.social-links .media {
+  padding-bottom: 10px;
 }
-footer {
-  background-color: #f0f0f0;
-  padding-top: 10px;
-}
-.media-social {
-  padding-bottom: 5px;
-}
-.media-social .media-social-logo {
+.social-links .media-social-logo {
   width: 35px;
   height: 35px;
 }
-.media-social .media-body {
+.social-links .media-body {
   padding-top: 5px;
 }
 .media-badge {
   padding-top: 15px;
+}
+.blog-article {
+  padding-top: 15px;
+}
+.blog-article h4 {
+  padding-bottom: 5px;
+}
+.blog-article p {
+  padding-left: 15px;
 }
 #aiken-portrait {
   padding-left: 10px;
@@ -35,4 +38,10 @@ footer {
     float: none;
     text-align: center;
   }
+}
+#git-hub-badge {
+  border: 0;
+  height: 142px;
+  width: 200px;
+  overflow: hidden;
 }

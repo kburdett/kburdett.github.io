@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="homepageApp">
 <head>
     <meta charset="utf-8"/>
     <meta name="author" content="Kevin Burdett"/>
@@ -7,18 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
     <link type="text/css" href="style.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/dist/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/dist/angular.min.js"></script>
+    <script src="js/dist/angular-route.min.js"></script>
+    <script src="js/dist/angular-sanitize.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="js/dist/html5shiv.js"></script>
+    <script src="js/dist/respond.min.js"></script>
     <![endif]-->
 
-    <title>Kevin Burdett - Landing Page</title>
+    <title ng-bind="'KevinBurdett.com - ' + $root.pageTitle"></title>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="60">
+<body>
 
 <div class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
     <div class="container-fluid">
@@ -33,11 +42,12 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#about">About</a></li>
-                <li><a href="#connect">Connect</a></li>
-                <li><a href="#coding">Coding</a></li>
-                <li><a href="#aiken">Aiken</a></li>
-                <li><a href="http://blog.kevinburdett.com">Blog</a></li>
+                <li><a href="#/about_me">About Me</a></li>
+                <li><a href="#/about_page">About This Page</a></li>
+                <li><a href="#/connect">Connect</a></li>
+                <li><a href="#/coding">Coding</a></li>
+                <li><a href="#/aiken">Aiken</a></li>
+                <li><a href="#/blog">Blog</a></li>
             </ul>
         </div>
     </div>
@@ -46,152 +56,13 @@
 <div class="container">
 
     <div class="page-header">
-        <h1>Kevin's Homepage
-            <small>my home on the internet</small>
-        </h1>
-        <p>Since I own the domain, I figured I should probably put something here...</p>
+        <h1>Kevin's Homepage</h1>
+        <p>Since I own the domain, I figure I should probably put something here...</p>
     </div>
 
-    <section>
-        <a id="about"></a>
-
-        <h1>About Me</h1>
-        <h4>Bio</h4>
-
-        <p>I am software developer living in Atlanta, GA. I have 7 years of experience in the software industry,
-            specializing in C#.NET development. I am a certified SCRUM master, and a firm believer in the power of
-            Agile. I graduated from Georgia Tech with a bachelor's degree in Computer Science. I am passionate about
-            continued learning and growth in both my personal and professional lives. I have a love of all things
-            motorized, but motorcycles will always be my favorite!</p>
-
-        <br>
-        <h4>History</h4>
-
-        <p>I graduated from Georgia Tech in 2008. After graduating, I accepted a position with Client Profiles as a
-            junior developer. I had been working as a part time developer with Client Profiles for almost 3 years. I
-            specialized in Microsoft Exchange Server integration, developing in C#.NET. I also dealt with a lot of
-            process improvement surrounding build and deployment, developer support, and source control management. I
-            stayed on full time at Client Profiles until late 2011, when the company underwent a difficult acquisition.
-            In December of that year, I accepted a senior software development position with RMI (now GE
-            Transportation), where I began life as a web developer specializing in ASP.NET MVC. I became a certified
-            SCRUM master and became immersed in the Agile development process. I was later promoted to the development
-            lead for the project. I am still employed there today, leading a team of 8. My team is working on new
-            product development mixed with custom project work in an ASP.NET MVC4 environment.</p>
-    </section>
-
-    <section>
-        <a id="connect"></a>
-
-        <h1>Connect</h1>
-
-        <p>I have begrudgingly created various social media profiles. Look me up if you want to connect, but I won't
-            promise a prompt response :)</p>
-
-        <a href="http://www.linkedin.com/in/kevinburdett">
-            <div class="media media-social">
-                <div class="media-social-logo pull-left">
-                    <img class="media-object" src="assets/linkedin.png" width="30" height="30" alt="LinkedIn Logo">
-                </div>
-                <div class="media-body">View my LinkedIn&reg; profile</div>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/kevin.burdett">
-            <div class="media media-social">
-                <div class="media-social-logo pull-left">
-                    <img class="media-object" src="assets/facebook.png" width="30" height="30" alt="Facebook Logo">
-                </div>
-                <div class="media-body">View my Facebook profile</div>
-            </div>
-        </a>
-
-        <a href="https://twitter.com/KevinBurdett">
-            <div class="media media-social">
-                <div class="media-social-logo pull-left">
-                    <img class="media-object" src="assets/twitter.png" width="30" height="30" alt="Twitter Logo">
-                </div>
-                <div class="media-body">@KevinBurdett on Twitter</div>
-            </div>
-        </a>
-    </section>
-
-    <section>
-        <a id="coding"></a>
-
-        <h1>Coding</h1>
-
-        <p>So what am I up to? I can't share my work, but I can share my hobbies!</p>
-
-        <div class="media">
-            <div class="pull-left media-badge">
-                <a href="http://www.projecteuler.com">
-                    <img class="media-object" src="http://projecteuler.net/profile/kburdett.png" width="200" height="60"
-                         alt="Project Euler Badge">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4>Project Euler</h4>
-                Project Euler presents a series of programming challenges, largely math-based, for users to solve. Since
-                the majority of my work consists of planning and design, it is refreshing to do some good old fashioned
-                programming :) Most of the Project Euler problems require little or no design, so I get to spend some
-                time devoted solely to the crafting and optimization of targeted algorithms. I really enjoy working on
-                micro-optimizations and algorithmic improvements. It is a nice change of pace from designing complicated
-                data structures and reviewing customer requirements.
-            </div>
-        </div>
-
-        <div class="media">
-            <div class="pull-left media-badge">
-                <iframe class="media-object" src="http://githubbadge.appspot.com/kburdett?a=0"
-                        style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
-            </div>
-            <div class="media-body">
-                <h4>GitHub</h4>
-                GitHub is the modern home for open source software. Having worked with Git as a source control provider
-                for a while now, I am a huge fan. GitHub provides free hosting to any project (including this page), as
-                long as it is public. I don't have much here (currently) but I am trying to get more involved with the
-                open source community. For now, this badge will merely serve as motivation.
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <a id="aiken"></a>
-
-        <h1>Aiken</h1>
-
-        <div id="aiken-portrait">
-            <img class="img-thumbnail" src="assets/aiken.jpg" alt="Aiken" width="320" height="200">
-        </div>
-        <p>In February of 2013, I adopted my Greyhound, Aiken. As with most decisions in my life, I began my dog search
-            with Google. A search for good apartment dogs led me to Greyhounds. This surprised me at first. I always
-            assumed they were high energy dogs. They are bred for running, after all. In truth, Greyhounds are bred for
-            <em>sprinting</em>, which is an important distinction. They are prone to short bursts of energy followed by
-            hours (many hours...) of lounging. I was looking for a dog that was quiet, low maintenance, and gentle.
-            Greyhounds seemed to fit the bill nicely, so I thought it worth meeting some. I headed over to <a
-                    href="http://www.greyhounds2.org/">Adopt a Greyhound Atlanta</a> to meet some. I fell in love with
-            the breed immediately. It is impossible to resist their gentle nature and those big, expressive eyes. I met
-            a few, but Aiken took to one another quickly. He was just what I was looking for, so I took him home. Having
-            a dog around has been quite a change for me. He has adjusted to being a house pet pretty quickly, much more
-            quickly than I have adjusted to having one. The experience has been very demanding, but very rewarding!</p>
-
-        <p>If you are thinking of adopting a dog, I would encourage you to head over to <a
-                href="http://www.greyhounds2.org/">Adopt a Greyhound Atlanta</a> and meet some Greyhounds. They are such
-            a special breed!</p>
-    </section>
+    <div ng-view></div>
 
 </div>
-</div>
-
-<footer id="footer">
-    <div class="container">
-        <p>Built by Kevin Burdett. Powered by <a href="http://getbootstrap.com">Bootstrap</a>. Hosted by <a
-                href="http://pages.github.com">GitHub</a>.</p>
-    </div>
-</footer>
-
-<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 <!--@formatter:off-->
 <script>
