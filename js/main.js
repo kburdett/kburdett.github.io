@@ -17,6 +17,7 @@ require.config({
             deps: ['jquery', 'dist/domReady!']
         },
         'angular-route': ['angular'],
+        'angular-resource': ['angular'],
         'angular-sanitize': ['angular'],
         'angulartics': ['angular'],
         'angulartics-ga': ['angular', 'angulartics'],

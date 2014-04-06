@@ -5,7 +5,6 @@
 define(['angular', 'angular-route', 'controllers', 'angulartics', 'angulartics-ga'], function (angular) {
     angular.module('homepage.app', [
         'homepage.controllers',
-        'homepage.services',
         'ngRoute',
         'angulartics',
         'angulartics.google.analytics'
