@@ -19,7 +19,7 @@ require.config({
         'angular-sanitize': ['angular'],
         'angulartics': ['angular'],
         'angulartics-ga': ['angular', 'angulartics'],
-        'bootstrap': 'jquery'
+        'bootstrap': ['jquery']
     }
 });
 
