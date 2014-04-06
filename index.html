@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="ng-app" ng-app="homepageApp">
+<html lang="en" id="ng-app">
 <head>
     <meta charset="utf-8"/>
     <meta name="author" content="Kevin Burdett"/>
@@ -8,17 +8,9 @@
 
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link type="text/css" href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
-    <link type="text/css" href="style.css" rel="stylesheet"/>
+    <link type="text/css" href="css/style.css" rel="stylesheet"/>
 
-    <script type="text/javascript" src="js/dist/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/dist/angular.min.js"></script>
-    <script src="js/dist/angular-route.min.js"></script>
-    <script src="js/dist/angular-sanitize.min.js"></script>
-    <script src="js/dist/angulartics.min.js"></script>
-    <script src="js/dist/angulartics-ga.min.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/dist/require.js" data-main="js/main.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,6 +24,12 @@
     <![endif]-->
 
     <title ng-bind="'KevinBurdett.com - ' + $root.pageTitle">KevinBurdett.com</title>
+
+    <style type="text/css">
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,9 +64,7 @@
         <h1>Kevin's Homepage <small ng-bind="$root.pageTitle"></small></h1>
     </div>
 
-    <div ng-view>
-        This page requires JavaScript to show correctly!
-    </div>
+    <div ng-cloak ng-view></div>
 
 </div>
 
