@@ -7,6 +7,7 @@ require.config({
         'angular': 'dist/angular.min',
         'angular-route': 'dist/angular-route.min',
         'angular-sanitize': 'dist/angular-sanitize.min',
+        'angular-resource': 'dist/angular-resource.min',
         'angulartics': 'dist/angulartics.min',
         'angulartics-ga': 'dist/angulartics-ga.min',
         'bootstrap': '../bootstrap/js/bootstrap.min'

@@ -1,24 +1,25 @@
 ///<reference path='../typings/angularjs/angular.d.ts' />
+///<reference path='../typings/angularjs/angular-resource.d.ts' />
 ///<reference path='../typings/requirejs/require.d.ts' />
+///<reference path='./services.ts' />
 
 interface IBlogPostScope extends ng.IScope {
-    postCollection: any;
+    wordPressPosts: WordPressPostsModel;
 }
 
-define(['angular', 'angular-sanitize'],
+define(['angular', 'angular-sanitize', 'services'],
     function (angular:ng.IAngularStatic) {
 
-        var blogCtrl = ['$scope', '$http',
-            function ($scope:IBlogPostScope, $http:ng.IHttpService) {
-                $http
-                    .jsonp('https://public-api.wordpress.com/rest/v1/sites/kaburdett.wordpress.com/posts?callback=JSON_CALLBACK&number=5&order_by=date')
-                    .success(function (data) {
-                        $scope.postCollection = data;
-                    });
+        var blogCtrl = ['$scope', 'WordPressPosts',
+            function ($scope:IBlogPostScope, WordPressPosts:ng.resource.IResourceClass<WordPressPostsModel>) {
+                WordPressPosts.get({site: 'kaburdett.wordpress.com'},
+                    function (data:WordPressPostsModel) {
+                        $scope.wordPressPosts = data;
+                    })
             }];
 
         angular
-            .module('homepage.controllers', ['ngSanitize'])
+            .module('homepage.controllers', ['ngSanitize', 'homepage.services'])
             .controller('BlogCtrl', blogCtrl);
 
     }

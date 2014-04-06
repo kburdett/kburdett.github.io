@@ -1,15 +1,17 @@
 ///<reference path='../typings/angularjs/angular.d.ts' />
+///<reference path='../typings/angularjs/angular-resource.d.ts' />
 ///<reference path='../typings/requirejs/require.d.ts' />
+///<reference path='./services.ts' />
 
-define(['angular', 'angular-sanitize'], function (angular) {
+define(['angular', 'angular-sanitize', 'services'], function (angular) {
     var blogCtrl = [
-        '$scope', '$http',
-        function ($scope, $http) {
-            $http.jsonp('https://public-api.wordpress.com/rest/v1/sites/kaburdett.wordpress.com/posts?callback=JSON_CALLBACK&number=5&order_by=date').success(function (data) {
-                $scope.postCollection = data;
+        '$scope', 'WordPressPosts',
+        function ($scope, WordPressPosts) {
+            WordPressPosts.get({ site: 'kaburdett.wordpress.com' }, function (data) {
+                $scope.wordPressPosts = data;
             });
         }];
 
-    angular.module('homepage.controllers', ['ngSanitize']).controller('BlogCtrl', blogCtrl);
+    angular.module('homepage.controllers', ['ngSanitize', 'homepage.services']).controller('BlogCtrl', blogCtrl);
 });
 //# sourceMappingURL=controllers.js.map
