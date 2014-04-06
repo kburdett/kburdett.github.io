@@ -12,6 +12,7 @@ define(['angular', 'angular-route', 'controllers', 'angulartics', 'angulartics-g
         angular
             .module('homepage.app', [
                 'homepage.controllers',
+                'homepage.services',
                 'ngRoute',
                 'angulartics',
                 'angulartics.google.analytics'
