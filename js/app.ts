@@ -26,9 +26,8 @@ define(['angular', 'angular-route', 'controllers', 'angulartics', 'angulartics-g
                         .when('/blog', { templateUrl: 'partials/blog.html', title: 'Blog', controller: 'BlogCtrl' })
                         .when('/coding', { templateUrl: 'partials/coding.html', title: 'Coding' })
                         .when('/connect', { templateUrl: 'partials/connect.html', title: 'Connect' })
-                        .when('/404', {templateUrl: 'partials/404.html', title: 'Not Found'})
                         .when('/error', {templateUrl: 'partials/error.html', title: 'Error'})
-                        .otherwise({ redirectTo: '/404' });
+                        .otherwise({templateUrl: 'partials/404.html', title: 'Not Found'});
                 }])
             // set the page title on route change
             .run(function ($rootScope:IHomepageRootScope, $location:ng.ILocationService) {

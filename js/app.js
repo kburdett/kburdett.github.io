@@ -11,7 +11,7 @@ define(['angular', 'angular-route', 'controllers', 'angulartics', 'angulartics-g
     ]).config([
         '$routeProvider',
         function ($routeProvider) {
-            $routeProvider.when('/', { redirectTo: '/about_me' }).when('/about_me', { templateUrl: 'partials/about_me.html', title: 'About Me' }).when('/about_page', { templateUrl: 'partials/about_page.html', title: 'About This Page' }).when('/aiken', { templateUrl: 'partials/aiken.html', title: 'Aiken' }).when('/blog', { templateUrl: 'partials/blog.html', title: 'Blog', controller: 'BlogCtrl' }).when('/coding', { templateUrl: 'partials/coding.html', title: 'Coding' }).when('/connect', { templateUrl: 'partials/connect.html', title: 'Connect' }).when('/404', { templateUrl: 'partials/404.html', title: 'Not Found' }).when('/error', { templateUrl: 'partials/error.html', title: 'Error' }).otherwise({ redirectTo: '/404' });
+            $routeProvider.when('/', { redirectTo: '/about_me' }).when('/about_me', { templateUrl: 'partials/about_me.html', title: 'About Me' }).when('/about_page', { templateUrl: 'partials/about_page.html', title: 'About This Page' }).when('/aiken', { templateUrl: 'partials/aiken.html', title: 'Aiken' }).when('/blog', { templateUrl: 'partials/blog.html', title: 'Blog', controller: 'BlogCtrl' }).when('/coding', { templateUrl: 'partials/coding.html', title: 'Coding' }).when('/connect', { templateUrl: 'partials/connect.html', title: 'Connect' }).when('/error', { templateUrl: 'partials/error.html', title: 'Error' }).otherwise({ templateUrl: 'partials/404.html', title: 'Not Found' });
         }]).run(function ($rootScope, $location) {
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             $rootScope.pageTitle = current.title;
