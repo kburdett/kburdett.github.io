@@ -28,7 +28,7 @@ require.config({
 });
 
 // startup the application
-require(['angular', 'dist/domReady!', 'app'],
+require(['angular', 'dist/domReady!', 'app', 'bootstrap'],
 
     function (angular:ng.IAngularStatic, document) {
 

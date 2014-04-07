@@ -26,7 +26,7 @@ require.config({
 });
 
 // startup the application
-require(['angular', 'dist/domReady!', 'app'], function (angular, document) {
+require(['angular', 'dist/domReady!', 'app', 'bootstrap'], function (angular, document) {
     // bootstrap the document, since we are loading asynchronously
     angular.bootstrap(document, ['homepage.app']);
 });
