@@ -4,10 +4,10 @@
 require.config({
     paths: {
         'jquery': 'https://code.jquery.com/jquery-2.1.4.min',
-        'angular': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min',
-        'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min',
-        'angular-sanitize': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-sanitize.min',
-        'angular-resource': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min',
+        'angular': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min',
+        'angular-route': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min',
+        'angular-sanitize': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.min',
+        'angular-resource': 'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.min',
         'angulartics': 'dist/angulartics.min',
         'angulartics-ga': 'dist/angulartics-ga.min',
         'bootstrap': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
