@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/build/js/app.js" />
+        <item url="file://$PROJECT_DIR$/js/app.js" />
+        <item url="file://$PROJECT_DIR$/js/services.js" />
+        <item url="file://$PROJECT_DIR$/build/js/services.js" />
+        <item url="file://$PROJECT_DIR$/build/js/controllers.js" />
+        <item url="file://$PROJECT_DIR$/build/js/main.js" />
+        <item url="file://$PROJECT_DIR$/js/main.js" />
+        <item url="file://$PROJECT_DIR$/js/controllers.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/Controllers/CodingCtrl.js" />
+      <root url="file://$PROJECT_DIR$/js/config.js" />
+      <root url="file://$PROJECT_DIR$/js/controllers/BlogCtrl.js" />
+      <root url="file://$PROJECT_DIR$/build/js/app.js" />
+      <root url="file://$PROJECT_DIR$/js/app.js" />
+      <root url="file://$PROJECT_DIR$/js/services.js" />
+      <root url="file://$PROJECT_DIR$/build/js/services.js" />
+      <root url="file://$PROJECT_DIR$/build/js/controllers.js" />
+      <root url="file://$PROJECT_DIR$/build/js/main.js" />
+      <root url="file://$PROJECT_DIR$/js/controllers.js" />
+      <root url="file://$PROJECT_DIR$/js/main.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
