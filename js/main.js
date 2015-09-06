@@ -25,7 +25,6 @@ require.config({
         'bootstrap': ['jquery']
     }
 });
-
 // startup the application
 require(['angular', 'domReady!', 'app', 'bootstrap'], function (angular, document) {
     // bootstrap the document, since we are loading asynchronously
