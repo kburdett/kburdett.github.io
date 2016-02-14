@@ -9,6 +9,30 @@
   }
 }
 
+.weighted {
+  background-color: fade-out($primary-color, 0.85);
+  color: $body-font-color;
+}
+
+.masthead {
+  @extend .weighted;
+  text-align: center;
+  padding: 4rem;
+  border-bottom: 1px $primary-color solid;
+}
+
+#footer {
+  @extend .weighted;
+  margin: 4rem 0 0;
+  padding: 4rem 0;
+  border-top: 1px $primary-color solid;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+}
+
 // overrides for syntax highlighting
 div.highlighter-rouge {
   background: none;

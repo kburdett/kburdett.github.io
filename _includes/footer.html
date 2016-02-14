@@ -1,8 +1,8 @@
-<div class="callout large primary">
-    <div id="footer" class="row medium-unstack">
+<div id="footer">
+    <div class="row medium-unstack">
 
-        <div class="columns small-6 medium-3 large-2">
-            <h4>Sitemap</h4>
+        <div class="columns small-6 medium-2">
+            <strong>Navigation</strong>
             <ul>
                 {% for page in site.pages %}
                 {% if page.title %}
@@ -12,8 +12,8 @@
             </ul>
         </div>
 
-        <div class="columns small-6 medium-3 large-2">
-            <h4>Connect</h4>
+        <div class="columns small-6 medium-2">
+            <strong>Connect</strong>
             <ul>
                 <li>
                     <a href="https://github.com/kburdett">
@@ -38,7 +38,7 @@
             </ul>
         </div>
 
-        <div class="columns medium-6 large-8">
+        <div class="columns medium-8">
             <h3>{{ site.title }}</h3>
             <p>{{ site.description }}</p>
             <div>
