@@ -19,6 +19,7 @@
   "dependencies": {
     "foundation-sites": "*",
     "foundation-icon-fonts": "*",
-    "motion-ui": "*"
+    "motion-ui": "*",
+    "normalize-css": "*"
   }
 }
