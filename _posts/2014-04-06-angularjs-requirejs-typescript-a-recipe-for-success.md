@@ -10,7 +10,7 @@ tags:
     - TypeScript
 author: Kevin Burdett
 ---
-I've been hearing a lot about [Angular](http://angularjs.org/) recently. I decided to give it a try and see what all the fuss is about. My homepage was in need of redesign anyways :) Up until now, my homepage has been largely JavaScript free. Since I would be adding a body of JavaScript code, it also seemed like the perfect time to pull in two other technologies that I'm a fan of... [TypeScript](http://www.typescriptlang.org) and [Require](http://requirejs.org). This post is mostly about Angular, but you will see TypeScript and Require sprinkled throughout as well.
+I've been hearing a lot about [Angular](http://angularjs.org/) recently. I decided to give it a try and see what all the fuss is about. My homepage was in need of redesign anyways... Up until now, my homepage has been largely JavaScript free. Since I would be adding a body of JavaScript code, it also seemed like the perfect time to pull in two other technologies that I'm a fan of... [TypeScript](http://www.typescriptlang.org) and [Require](http://requirejs.org). This post is mostly about Angular, but you will see TypeScript and Require sprinkled throughout as well.
 
 There is _a lot_ of information I want to cover in this post, and I am only scratching the surface of what Angular can do. Unfortunately that means I will have to gloss over a great many details. I will try to focus on the technical implementation, and less on the journey of getting to it. I will follow up with my overall impressions at the end of the post. If you aren't familiar with [Angular](http://angularjs.org/), [TypeScript](http://www.typescriptlang.org), or [Require](http://requirejs.org), you should go do some reading on the technologies involved first. To cut down on the snippet sizes, I will often edit or crop files in this post. However, you can get the full version from [my Git repository](https://github.com/kburdett/kburdett.github.io).
 
@@ -336,6 +336,6 @@ Angular has a very rich feature set. I'm just scratching the surface so far. The
 *   **Testing**: Angular was built from the ground up with testability in mind. All of that dependency injection was introduced so that mocked components could be swapped out. This is pretty awesome, and I really want to learn more about it.
 *   **Directive**: I love unobtrusive JavaScript, but having tons of little blobs of JavaScript that do nothing more than wire-up elements (usually by ID or class) at the bottom of a page can be difficult (and frustrating!) to manage. It seems to me that directives could solve that problem for good, but I don't have a great understanding of what their capabilities are yet.
 *   **Bi-directional binding**: This is actually one of Angular's biggest selling points. Unfortunately, I don't have any content to really stretch Angular's binding capabilities. I'll have to find something...
-*   **Testing... again**: It is worth looking at twice :)
+*   **Testing... again**: It is worth looking at twice!
 
 Look for more posts to come as I explore!
