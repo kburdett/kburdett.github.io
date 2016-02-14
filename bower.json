@@ -1,0 +1,24 @@
+{
+  "name": "kevinburdett.com",
+  "description": "Kevin's home on the internet",
+  "main": "gulpfile.js",
+  "authors": [
+    "Kevin Burdett"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kburdett/kburdett.github.io",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "*",
+    "foundation-icon-fonts": "*",
+    "motion-ui": "*"
+  }
+}

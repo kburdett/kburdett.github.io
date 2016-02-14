@@ -1,38 +1,50 @@
-<footer class="site-footer">
+<div class="callout large primary">
+    <div id="footer" class="row medium-unstack">
 
-  <div class="wrapper">
+        <div class="columns small-6 medium-3 large-2">
+            <h4>Sitemap</h4>
+            <ul>
+                {% for page in site.pages %}
+                {% if page.title %}
+                <li><a class="item" href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+        <div class="columns small-6 medium-3 large-2">
+            <h4>Connect</h4>
+            <ul>
+                <li>
+                    <a href="https://github.com/kburdett">
+                        <i class="fi-social-github"></i>&nbsp;GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/kevinburdett">
+                        <i class="fi-social-linkedin"></i>&nbsp;LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/u/0/101490695900104362555/about" class="item">
+                        <i class="fi-social-google-plus"></i>&nbsp;Google+
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/KevinBurdett" class="item">
+                        <i class="fi-social-twitter"></i>&nbsp;Twitter
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
+        <div class="columns medium-6 large-8">
+            <h3>{{ site.title }}</h3>
+            <p>{{ site.description }}</p>
+            <div>
+                <span>subscribe <a href="/feed.xml">via RSS <i class="fi-rss"></i></a></span>
+            </div>
+        </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
     </div>
-
-  </div>
-
-</footer>
+</div>

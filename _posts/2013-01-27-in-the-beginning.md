@@ -3,7 +3,8 @@ layout: post
 title: In the beginning
 date: 2013-01-27 02:35:52.000000000 -05:00
 category: ramblings
-tags: []
+tags:
+    - blogging
 author: Kevin Burdett
 ---
 I have long avoided the world of blogging, along with most forms of social networking. I have never wished to contribute to the epidemic of over-sharing on today's internet. Recently, however, I have begun to think differently. As a developer, I have been helped many times by the blogs of other developers. My quest for an elusive solution to a nagging technical problem has often been paved by the experiences of others. As a professional programmer, very little (if any) of what I do is unbroken ground. This, there is much that can be gleaned from the experiences of others. While [StackOverflow](http://www.stackoverflow.com) remains my go-to resource, developer blogs have proven to be excellent resources as well.

@@ -1,0 +1,33 @@
+article.blog-post-summary {
+  padding-bottom: 2em;
+
+  .meta {
+    font-size: smaller;
+
+    div {
+      display: inline-block;
+    }
+
+    div.head {
+      width: 6ch;
+      vertical-align: top;
+      opacity: 0.5;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+  }
+}
+
+article.blog-post {
+  header {
+    div.meta {
+      font-size: smaller;
+      text-align: right;
+      opacity: 0.5;
+    }
+  }
+}
+

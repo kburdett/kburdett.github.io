@@ -9,7 +9,6 @@ tags:
     - Scripting
 author: Kevin Burdett
 ---
-__NOTE: Please pardon the horizontal scrolls on the code blocks, I thought it best to leave the commands and output unchanged__
 
 I have discovered one of the most infuriating problems with PowerShell. It is nearly impossible to work with complex command line applications. Microsoft refers to these as "legacy" applications. By this definition, every application that is not a PowerShell Cmdlet is "legacy", which is rather absurd... The problem is that PowerShell insists on re-parsing all of your arguments and applying its own quoting rules. I find this behavior very helpful in the general case. However, there is no way to bypass this behavior. When you meet an application with slightly more obstinate (or perhaps obtuse is a better word...) argument parsing rules, this become an impossibly frustrating behavior.
 
@@ -192,3 +191,5 @@ Which produces the following output.
 Other than some weirdness with the relative path in my example, this is the exact output I was looking for. I could use Resolve-Path to convert the relative path to an absolute path, but my actual script used an absolute path anyways, so why bother. It is much less code than the first hack (when you include the redirects and file reads) and still remains firmly grounded in the land of scripting. It's all about choosing the lesser evil at this point, so this is the solution that I ended up using.
 
 Ultimately, I spent entirely too much time to come up with a solution that I am not happy with. I took the fact that it worked at all as a victory. If anybody out there has a better solution, **_please_** drop me a comment!
+
+__P.S. Please pardon the horizontal scrolls on the code blocks, I thought it best to leave the commands and output unchanged__
