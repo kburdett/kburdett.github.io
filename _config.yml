@@ -4,6 +4,10 @@ url: "http://www.kevinburdett.com"
 
 markdown: kramdown
 
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
