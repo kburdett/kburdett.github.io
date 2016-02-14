@@ -1,12 +1,16 @@
 title: KevinBurdett.com
 description: Kevin's home on the internet; musings of a programmer adrift in Corporate America.
-url: "http://www.kevinburdett.com/"
+url: "http://www.kevinburdett.com"
 
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 sass:
   sass_dir: _sass
-  style: compressed
+  style: extended
   load_paths:
     - bower_components/foundation-sites/scss/
     - bower_components/foundation-icon-fonts/

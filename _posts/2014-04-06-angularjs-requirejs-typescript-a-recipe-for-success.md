@@ -45,16 +45,13 @@ Every site needs an index.html, or some equivalent. An Angular site is no differ
 
 ### index.html
 
-{% highlight html linenos %}
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--- ... -->
-
+    <!--- ... more stuff ...-->
     <script src="/url/to/require.min.js" data-main="js/main.js"></script>
-
-    <!--- ... -->
-
+    <!--- ... more stuff ...-->
     <style type="text/css">
         [ng-cloak] {
             display: none;
@@ -63,22 +60,15 @@ Every site needs an index.html, or some equivalent. An Angular site is no differ
 </head>
 
 <body>
-
-<!--- ... -->
-
+<!--- ... more stuff ...-->
 <div class="container">
-
-    <!--- ... -->
-
+    <!--- ... more stuff ...-->
     <div id="placeholder" ng-cloak ng-view></div>
-
 </div>
-
-<!--- ... -->
-
+<!--- ... more stuff ...-->
 </body>
 </html>
-{% endhighlight %}
+```
 
 There are three things I will call your attention to.
 
@@ -94,7 +84,7 @@ Now that we have our application template set up, we need to start up an Angular
 
 ### main.ts
 
-{% highlight javascript linenos %}
+```javascript
 ///<reference path='../typings/angularjs/angular.d.ts' />
 ///<reference path='../typings/requirejs/require.d.ts' />
 
@@ -131,7 +121,7 @@ require(['angular', 'dist/domReady!', 'app'],
         angular.bootstrap(document, ['homepage.app']);
     }
 );
-{% endhighlight %}
+```
 
 So what is going on here?
 
@@ -150,7 +140,7 @@ So now Require has loaded all of our files, and our application module has been 
 
 ### app.ts
 
-{% highlight javascript linenos %}
+```javascript
 ///<reference path='../typings/angularjs/angular.d.ts' />
 ///<reference path='../typings/angularjs/angular-route.d.ts' />
 ///<reference path='../typings/requirejs/require.d.ts' />
@@ -186,7 +176,7 @@ define(['angular', 'angular-route', 'controllers' /* ... */],
         ;
     }
 );
-{% endhighlight %}
+```
 
 Here we create our first Angular module. This module represents the top level module. It is responsible for coordinating and wiring communication between the other modules. As you can see, we create this module by calling `angular.module()`. This function creates and returns a new module. It takes two parameters here, the first is the name of the module being created. This name is the same as referenced in the `angular.bootstrap()` call from main.ts. The second argument is a list of dependencies. These dependencies are Angular modules, not script files. This will help Angular get a "lay of the land" for our project. Here, I am passing "homepage.controllers" and "ngRoute". This will give me access to all of my controllers and `$routeProvider`, respectively. After defining my module, I can configure it with a call to `.config()` by passing in a configuration function. This configuration function uses the annotated function syntax defined by Angular. It interacts with the dependency injection system. I am passing in an array, where the last item in the array is a function and all prior items are the arguments (in order) that should be injected into that function. In this example, I pass the string "$routeProvider" to indicate that Angular should inject a route provider for me (you can read more about providers in the [provider <abbr title="Advanced Programming Interface">API</abbr> documentation](http://docs.angularjs.org/api/ng/provider)). I then use this provider to configure my routes using JavaScript promises (Angular uses a syntax based on [Q](https://github.com/kriskowal/q)). I think the syntax is pretty straightforward, you can redirect, load a partial template, specify a controller and a few other less useful things (see the [route provider documentation](http://docs.angularjs.org/api/ngRoute/provider/$routeProvider)). As you can see, most of my routes simply load static templates, but controllers are where things get interesting!
 
@@ -196,7 +186,7 @@ Controllers are what makes Angular truly dynamic. You don't actually need to def
 
 ### controllers.js
 
-{% highlight javascript linenos %}
+```javascript
 ///<reference path='../typings/angularjs/angular.d.ts' />
 ///<reference path='../typings/angularjs/angular-resource.d.ts' />
 ///<reference path='../typings/requirejs/require.d.ts' />
@@ -223,8 +213,7 @@ define(['angular', 'angular-sanitize', 'services'],
 
     }
 );
-{% endhighlight %}
-
+```
 Controllers use the same annotated function format that we saw for the configuration function earlier. Here you can see that I am creating a new module, named "homepage.controllers", and creating a single controller name "BlogCtrl" using the `.controller()` method. I have asked Angular to inject `$scope` and `WordPressPosts` into my controller function. The `$scope` object is this controller's connection to the view similar to the `ViewBag` concept in ASP.NET MVC. Anything assigned to that object will be available for consumption by the view. The `WordPressPosts` object being injected is a custom service that I have written to retrieve blog posts from WordPress.com's public <abbr title="Advanced Programming Interface">API</abbr>. Allow me to ignore this for now... The code reads well enough to see that `$scope.wordPressPosts = data` is assigning a collection of my WordPress.com posts to a property on the scope. Once on the scope, the data is ready for consumption in a template.
 
 ## Partial Templates
@@ -233,20 +222,18 @@ This brings us to the meat of what Angular does. It turns templates into views. 
 
 ### blog.html
 
-{% highlight html linenos %}
-{% raw %}
+```html
 <!-- ... -->
 <div>
     <div class="blog-article" ng-repeat="post in wordPressPosts.posts">
         <h4>
             <span ng-bind-html="post.title"></span>
-            <small>{{post.date | date: 'MM/dd/yyyy HH:mm'}}</small>
+            <small>{% raw %}{{post.date | date: 'MM/dd/yyyy HH:mm'}}{% endraw %}</small>
         </h4>
         <p ng-bind-html="post.excerpt"></p>
     </div>
 </div>
-{% endraw %}
-{% endhighlight %}
+```
 
 Thus the magic begins. I'm using a combination of directives and placeholders to pull content out of my model. Obviously, the `wordPressPosts` property matches with the one my controller assigned. Angular has some really powerful functionality here. Alas, this blog post is already huge, so I am going to skip over it for now. If you are familiar with web template frameworks, then nothing I have done in this template will be interesting. Look for a follow up after I have had an opportunity to play with some of the more advanced features of Angular.
 
@@ -256,7 +243,7 @@ I skipped over this part while we were discussing the controller, but services a
 
 ### services.ts
 
-{% highlight javascript linenos %}
+```javascript
 ///<reference path='../typings/angularjs/angular.d.ts' />
 ///<reference path='../typings/angularjs/angular-resource.d.ts' />
 ///<reference path='../typings/requirejs/require.d.ts' />
@@ -289,7 +276,7 @@ define(['angular', 'angular-resource'],
             .factory('WordPressPosts', WordPressPosts)
     }
 );
-{% endhighlight %}
+```
 
 I start by defining two interfaces (one is a list of the other). These interfaces are stand-in models that represent a typed subset of WordPress.com's response. I don't use much, so I only declare the properties I am interested in. To register the service, first I create a new module, which depends on "ngResource". This is a plugin to make RESTful queries a bit easier to work with. Once the module is created, I register a factory method named "WordPressPosts". This factory method configures and returns a new resource service using the injected constructor provided by ngResource. I am only defining a get method here, but services that allow modifications are absolutely possible. As you can see, there isn't much code required to make this operational. Once defined, I need only inject this into a controller and call `get` as we saw in `BlogCtrl`.
 

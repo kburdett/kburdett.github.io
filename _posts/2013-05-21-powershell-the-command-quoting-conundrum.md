@@ -21,12 +21,12 @@ In short, wrapping the entire argument in quotes causes a parse error within MS 
 
 Thus the slow, agonizing descent to insanity began... The journey took about 2 days, I will distill the results for you here using a little C# application that I wrote to print out the entire command line, as seen by the target executable, followed by each of the arguments, as tokenized by the .NET command line interpreter. I realize there is a similar program already available (EchoArgs) to assist with this kind of debugging. I wanted to see the entire command line, not just the tokenized version, since MS Deploy is not tokenizing in the standard way. To set this up, I started with a little set-up work in PowerShell.
 
-{% highlight powershell %}
+```powershell
 $printArgs = Join-Path $pwd "..\PrintArgs.exe"
 $package = "C:\Some\Path\With Spaces.zip"
 $destination = "SomeComputer"
 $parameterFile = "C:\Some\Path\To an xml file.xml"
-{% endhighlight %}
+```
 
 Once the basic setup was in place, I began to try some different quoting options.
 
@@ -34,9 +34,9 @@ Once the basic setup was in place, I began to try some different quoting options
 
 First, I try the command line without any quotes at all. Basically, throw caution to the wind and hope for the best.
 
-{% highlight powershell %}
+```powershell
 & $printArgs -source:package=$package -dest:auto,computerName=$destination,includeAcls=False -verb:sync -setParamFile:$parameterFile
-{% endhighlight %}
+```
 
 Which produces the following output.
 
@@ -57,9 +57,9 @@ Clearly, this is wrong. Just how wrong is somewhat surprising though. Both the a
 
 Next I try quoting the individual arguments.
 
-{% highlight powershell %}
+```powershell
 & $printArgs "-source:package=$package" "-dest:auto,computerName=$destination,includeAcls=False" "-verb:sync" "-setParamFile:$parameterFile"
-{% endhighlight %}
+```
 
 Which produces the following output.
 
@@ -76,9 +76,9 @@ Better, my tokenized arguments are correct. However, the quotes in front of the 
 
 Next I try applying inner quotes around the paths. My thinking here is that perhaps if I place the quotes in the correct place, PowerShell will not quote the entire argument.
 
-{% highlight powershell %}
+```powershell
 & $printArgs "-source:package=""$package""" "-dest:auto,computerName=""$destination"",includeAcls=False" "-verb:sync" "-setParamFile:""$parameterFile"""
-{% endhighlight %}
+```
 
 Which produces the following output.
 
@@ -99,9 +99,9 @@ Wishful thinking... It added the quotes anyways. I was actually surprised at how
 
 At this point, I begin perusing the internet for others in my position. I am definitely not alone, as it turns out. I find many "solutions" put forth by the community since Microsoft has been silent on the issue. The first one I run across is to use single quotes as the nested quote character.
 
-{% highlight powershell %}
+```powershell
 & $printArgs "-source:package='$package'" "-dest:auto,computerName='$destination',includeAcls=False" "-verb:sync" "-setParamFile:'$parameterFile'"
-{% endhighlight %}
+```
 
 Which produces the following output.
 
@@ -118,9 +118,9 @@ The arguments parse correctly with this command line, but the change in quotatio
 
 The next potential "solution" I run across is to use the Invoke-Expression command with the exact string I wish to execute.
 
-{% highlight powershell %}
+```powershell
 Invoke-Expression "& $printArgs -source:package=""$package"" -dest:auto,computerName=""$destination"",includeAcls=False -verb:sync -setParamFile:""$parameterFile"""
-{% endhighlight %}
+```
 
 Which produces the following output.
 
@@ -145,10 +145,10 @@ After wasting entirely too much time on this problem, I gave up on finding a pro
 
 The first hack is using the Start-Process command to execute the application.
 
-{% highlight powershell %}
+```powershell
 $processArgs = @("-source:package=""$package""", "-dest:auto,computerName=""$destination"",includeAcls=False", "-verb:sync", "-setParamFile:""$parameterFile""")
 Start-Process $printArgs -ArgumentList $processArgs -NoNewWindow -Wait
-{% endhighlight %}
+```
 
 Which produces the following output.
 
@@ -170,14 +170,14 @@ The second hack is the one I ultimately ended up using. It is pretty simple:
 1. Execute the .CMD file
 1. Clean up
 
-{% highlight powershell %}
+```powershell
 $tempCmd = Join-Path $env:TEMP "temp.cmd"
 New-Item $tempCmd -Force -Type file > $null
 $commandLine = """$printArgs"" -source:package=""$package"" -dest:auto,computerName=""$destination"",includeAcls=False -verb:sync -setParamFile:""$parameterFile"""
 Set-Content $tempCmd $commandLine
 & $tempCmd
 Remove-Item $tempCmd
-{% endhighlight %}
+```
 
 Which produces the following output.
 

@@ -34,7 +34,7 @@ _With parenthesis_
 
 Let's take a look at an example.
 
-{% highlight css linenos %}
+```css
 .emphasis (@color) {
     background-color: @color;
     color: black;
@@ -68,11 +68,11 @@ Let's take a look at an example.
     .emphasis(#FFB6C1);
     .simple-article;
 }
-{% endhighlight %}
+```
 
 There is quite a bit in this example, so I'll go into it a little bit. The idea is to provide styles for small emphasis boxes for notes and warnings. I created a mixin for the emphasis definition (.emphasis), which takes in the color as a parameter. This sets up the style for the emphasis box itself. I am taking advantage of the darken function to produce the border color. Then, I created a separate mixin for the layout of the contents (.simple-article). This just sets up the basic layout within the box. Now, let's take a look at the compiled (unminified) CSS.
 
-{% highlight css linenos %}
+```css
 .simple-article h1 {
     font-size: 1em;
     font-weight: bold;
@@ -123,7 +123,7 @@ There is quite a bit in this example, so I'll go into it a little bit. The idea 
 .warning p {
     padding-left: 5px;
 }
-{% endhighlight %}
+```
 
 So you can see the simple-article styles remain in the output, while the emphasis styles do not. In both cases, all of the styles are fully denormalized, so .note and .warning don't share any styles. This differs a bit from SASS, which will stack the descriptors. You can decide for yourself whether this is better, or if it matters at all. In either case, you can see that all of the styles from .simple-article and .emphasis are applied to both .note and .warning, just as expected.
 

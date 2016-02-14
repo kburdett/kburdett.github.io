@@ -12,7 +12,7 @@ I recently had the opportunity to learn PowerShell. We decided to use it to mana
 
 For the first part, I'll dig into function outputs. I had some difficulty with a function producing strange output, or at least it seemed strange. Consider the following example (contrived, but suprisingly close to my actual usage):
 
-{% highlight powershell linenos %}
+```powershell
 function CreateSemaphoreFile ($drive)
 {
     $path = "${drive}:\temp\lock"
@@ -22,7 +22,7 @@ function CreateSemaphoreFile ($drive)
 }
 
 Write-Host (CreateSemaphoreFile "C")
-{% endhighlight %}
+```
 
 This outputs:
 
@@ -34,7 +34,7 @@ This definitely caught me by surprise. Due to the return statement, I expected t
 
 This sent me on a wild goose chase searching for where my variable was magically reassigned. After some research, I discovered that the reason for this is actually pretty straightforward, and had nothing to do with the value in "path". In PowerShell, a function's output isn't determined by the return statement. Instead, the output of a function is simply any _uncaptured_ output that originates from within that function. The return statement is just adding the value of "path" to the output before exiting the function. This is pretty much what you'd expect from a return statement. However, it turns out that New-Item Cmdlet _also_ has an output. It happens to be the path of the item that it just created. Since this output is not captured, it is added to the output of CreateSemaphoreFile. Hence, the value of "path" ends up in the function's output twice. So how do we fix this? We could just remove the return statement. That is probably the simplest option, but what if our function was more complex and we wanted to return something different? Easy, we just have to capture the output of New-Item somewhere. Since we aren't going to use it, the simplest way is just to redirect it to null like this:
 
-{% highlight powershell linenos %}
+```powershell
 function CreateSemaphoreFile ($drive)
 {
     $path = "${drive}:\temp\lock"
@@ -44,7 +44,7 @@ function CreateSemaphoreFile ($drive)
 }
 
 Write-Host (CreateSemaphoreFile "C")
-{% endhighlight %}
+```
 
 Output:
 

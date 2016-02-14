@@ -22,10 +22,10 @@ I started with GitHub... and ended with GitHub. It was the world's shortest jour
 
 The first repository I wanted to migrate was my configuration files (.bashrc, .vimrc, etc) repository. At first, I thought this seemed like an abuse of a free GitHub account. It is intended for open source software, after all, not my personal configuration stuff. Besides, why would anyone else care? I poked around a little bit to see if anyone else was doing this. It turns out others are doing this. Thousands of others. If fact, GitHub _wants_ your configuration. They even created [a page to help you get started](http://dotfiles.github.io/). I was happy to oblige and started about moving my repository. Thankfully, moving a Git repository from one host to another is stupid easy. You just create the repository on the destination, update your origin, and push. Just two lines in your favorite shell.
 
-{% highlight shell %}
+```shell
 git remote --set-url origin https://github.com/{username}/{repository}.git
 git push
-{% endhighlight %}
+```
 
 To make it even better, you don't even have to give up your commit history. Yay Git! If you are curious, you can check out [my dotfiles over at GitHub](https://github.com/kburdett/dotfiles).
 
