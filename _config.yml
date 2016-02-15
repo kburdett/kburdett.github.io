@@ -18,8 +18,4 @@ kramdown:
 
 sass:
   sass_dir: _sass
-  style: extended
-  load_paths:
-    - bower_components/foundation-sites/scss/
-    - bower_components/foundation-icon-fonts/
-    - bower_components/motion-ui/
+  style: compressed

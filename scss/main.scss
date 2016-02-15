@@ -6,13 +6,13 @@ $fi-path: "/bower_components/foundation-icon-fonts";
 
 @charset "utf-8";
 
-@import 'settings';
-@import 'base';
-@import 'blog';
-@import 'syntax';
-@import 'foundation';
-@import 'foundation-icons';
-@import 'motion-ui';
+@import '../_sass/settings';
+@import '../_sass/base';
+@import '../_sass/blog';
+@import '../_sass/syntax';
+@import '../bower_components/foundation-sites/scss/foundation';
+@import '../bower_components/foundation-icon-fonts/foundation-icons';
+@import '../bower_components/motion-ui/motion-ui';
 
 @include foundation-global-styles;
 @include foundation-grid;
