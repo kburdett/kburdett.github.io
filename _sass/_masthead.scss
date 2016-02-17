@@ -1,0 +1,32 @@
+.masthead {
+  text-align: center;
+  background-color: $dark-gray;
+  color: $white;
+  padding: 1rem 4rem;
+  @include breakpoint(small only) {
+    padding: 1rem 1rem;
+  }
+
+  .banner {
+    padding: 5em 0;
+    @include breakpoint(small only) {
+      padding: 2em 0;
+    }
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      display: inline;
+
+      &:after {
+        content: ' // ';
+      }
+
+      &:last-child:after {
+        content: '';
+      }
+    }
+  }
+}

@@ -46,16 +46,16 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
-$primary-color: #2199e8;
-$secondary-color: #777;
+$primary-color: #ff5a09;
+$secondary-color: #f3843e;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$light-gray: #cacaca;
+$medium-gray: #6e6e6e;
+$dark-gray: #393939;
 $black: #0a0a0a;
-$white: #fefefe;
+$white: #fff2e7;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -100,20 +100,20 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
         small: (
-                'h1': 24,
-                'h2': 20,
-                'h3': 19,
-                'h4': 18,
-                'h5': 17,
-                'h6': 16,
+                'h1': 1.6rem,
+                'h2': 1.4rem,
+                'h3': 1.3rem,
+                'h4': 1.2rem,
+                'h5': 1.1rem,
+                'h6': 1rem,
         ),
         medium: (
-                'h1': 48,
-                'h2': 40,
-                'h3': 31,
-                'h4': 25,
-                'h5': 20,
-                'h6': 16,
+                'h1': 2.4rem,
+                'h2': 2.2rem,
+                'h3': 1.8rem,
+                'h4': 1.4rem,
+                'h5': 1.2rem,
+                'h6': 1rem,
         ),
 );
 $header-color: inherit;
@@ -516,7 +516,7 @@ $thumbnail-radius: $global-radius;
 // 33. Title Bar
 // -------------
 
-$titlebar-background: $black;
+$titlebar-background: $dark-gray;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
@@ -542,6 +542,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $dark-gray;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

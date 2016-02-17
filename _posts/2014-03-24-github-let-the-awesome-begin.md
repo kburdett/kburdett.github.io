@@ -11,7 +11,7 @@ author: Kevin Burdett
 ---
 After a long hiatus, I decided to start investing in my online profile again. I added some content on my homepage, re-themed my blog, and launched another push to blog more (hence this post). It seemed like a good opportunity to re-evaluate my technology stack as well. I have been hosting my homepage and my Git repositories on my Synology NAS here at the apartment, while my blog is hosted here at WordPress.com. This arrangement has been working well enough, but I'm not too keen on hosting my stuff here. The homepage hasn't been much trouble, but hosting my Git server has been a bit of a pain. Thus began my quest to host elsewhere.
 
-## The journey begins...
+# The journey begins...
 
 I started with GitHub... and ended with GitHub. It was the world's shortest journey. Seriously, the decision took about 30 seconds. "Why GitHub," you ask? I have multiple reasons.
 
@@ -29,7 +29,7 @@ git push
 
 To make it even better, you don't even have to give up your commit history. Yay Git! If you are curious, you can check out [my dotfiles over at GitHub](https://github.com/kburdett/dotfiles).
 
-## The great website move of 2014
+# The great website move of 2014
 
 With my dotfiles out of the way, I moved on to my next repository. This one holds the source code for [my super un-complicated homepage](http://www.kevinburdett.com). Once again, I wasn't sure if this would be an abuse. Releasing my homepage's source code isn't exactly a gift to the world. As before, I poked around a bit to see if others were doing the same thing. I was pleasantly surprised, once again. Not only is it acceptable, but GitHub _wants_ your homepage. GitHub created [GitHub pages](http://pages.github.com/) for precisely this purpose. They are happy to host sites for users, organizations, and projects alike. All for free! Even with custom domain support! How awesome is that?
 
