@@ -1,3 +1,5 @@
+$page-border: 2px $primary-color solid;
+
 #content {
   margin: 2rem 4rem;
 
@@ -10,6 +12,7 @@
 #footer {
   background-color: $dark-gray;
   color: $white;
+  border-top: $page-border;
   margin: 4rem 0 0;
   padding: 4rem 0;
 
@@ -28,6 +31,11 @@
 
 .top-bar {
   color: $white;
+  border-bottom: $page-border;
+}
+
+.title-bar {
+  border-bottom: $page-border;
 }
 
 .page-title {

@@ -3,6 +3,7 @@
   background-color: $dark-gray;
   color: $white;
   padding: 1rem 4rem;
+  border-bottom: $page-border;
   @include breakpoint(small only) {
     padding: 1rem 1rem;
   }
@@ -21,6 +22,7 @@
       display: inline;
 
       &:after {
+        opacity: 0.5;
         content: ' // ';
       }
 
