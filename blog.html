@@ -10,15 +10,15 @@ command: ls -lnp
 
 <article class="blog-post-summary">
     <header>
-        <h3>{{ post.title }}</h3>
+        <h3 class="show-for-medium">{{ post.title }}</h3>
+        <h5 class="show-for-small-only"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
     </header>
 
     <div class="row medium-unstack">
-        <div class="columns small-order-1 medium-8 large-9">
+        <div class="columns medium-8 large-9 show-for-medium">
             {{ post.excerpt }}
-            <a href="{{ post.url | prepend: site.baseurl }}">Read more...</a>
         </div>
-        <div class="columns small-order-2 medium-4 large-3">
+        <div class="columns medium-4 large-3">
             <div class="meta">
                 <div class="head">on <span class="float-right">//</span></div>
                 <div class="body">
@@ -44,6 +44,9 @@ command: ls -lnp
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row show-for-medium">
+        <a href="{{ post.url | prepend: site.baseurl }}">Read the rest...</a>
     </div>
 </article>
 
