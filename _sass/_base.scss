@@ -38,6 +38,15 @@ $page-border: 2px $primary-color solid;
   border-bottom: $page-border;
 }
 
+.tech-logo {
+  width: 130px;
+
+  .jekyll {
+    border-radius: 4px;
+    background-color: #515151;
+  }
+}
+
 .page-title {
   display: block;
   margin-bottom: 1rem;
