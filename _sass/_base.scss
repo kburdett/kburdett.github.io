@@ -43,6 +43,16 @@ $page-border: 2px $primary-color solid;
   background-color: #515151;
 }
 
+// for some reason, media-object overrides width to 100%... I don't want this
+#badge-project-euler {
+  width: 200px !important;
+  height: 60px !important;
+}
+#badge-stackoverflow {
+  width: 208px !important;
+  height: 58px !important;
+}
+
 .page-title {
   display: block;
   margin-bottom: 1rem;
