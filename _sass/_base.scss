@@ -41,16 +41,7 @@ $page-border: 2px $primary-color solid;
 .jekyll-logo {
   border-radius: 4px;
   background-color: #515151;
-}
-
-// for some reason, media-object overrides width to 100%... I don't want this
-#badge-project-euler {
-  width: 200px !important;
-  height: 60px !important;
-}
-#badge-stackoverflow {
-  width: 208px !important;
-  height: 58px !important;
+  display: inline-block;
 }
 
 .page-title {
